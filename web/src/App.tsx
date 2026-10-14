@@ -73,7 +73,9 @@ export function App() {
     setLocked([]);
   };
 
-  const toggleLock = (id: string) =>
+  const clearUnlocked = () => edit(roster.filter((id) => locked.includes(id)));
+
+  const toggleLock =(id: string) =>
     setLocked((l) => (l.includes(id) ? l.filter((x) => x !== id) : [...l, id]));
 
   const reoptimize = async () => {
@@ -165,6 +167,7 @@ export function App() {
           onRemove={remove}
           onToggleLock={toggleLock}
           onClear={clear}
+          onClearUnlocked={clearUnlocked}
         />
         <PlayerPool players={players} rosterIds={rosterIds} metric={metric} onAdd={(id) => add(id)} onRemove={remove} />
       </main>

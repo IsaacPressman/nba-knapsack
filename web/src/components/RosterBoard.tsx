@@ -20,9 +20,10 @@ interface Props {
   onRemove: (id: string) => void;
   onToggleLock: (id: string) => void;
   onClear: () => void;
+  onClearUnlocked: () => void;
 }
 
-export function RosterBoard({ roster, locked, metric, onAdd, onRemove, onToggleLock, onClear }: Props) {
+export function RosterBoard({ roster, locked, metric, onAdd, onRemove, onToggleLock, onClear, onClearUnlocked }: Props) {
   const [dropTarget, setDropTarget] = useState<string | null>(null);
 
   const accept = (e: DragEvent) => {
@@ -55,6 +56,14 @@ export function RosterBoard({ roster, locked, metric, onAdd, onRemove, onToggleL
           <span className={`count ${roster.length === ROSTER_SIZE ? "" : "is-short"}`}>
             {roster.length} of {ROSTER_SIZE} players
           </span>
+          <button
+            type="button"
+            className="link-btn"
+            onClick={onClearUnlocked}
+            disabled={roster.every((p) => locked.includes(p.id))}
+          >
+            Clear unlocked
+          </button>
           <button type="button" className="link-btn" onClick={onClear} disabled={roster.length === 0}>
             Clear all
           </button>
