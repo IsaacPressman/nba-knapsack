@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .ink { fill: #16202b; }
+    .loop { fill: none; stroke: #16202b; }
+    .cut { fill: #ffffff; }
+    .flap { fill: none; stroke: #ffffff; }
+    .g { fill: #2563c9; }
+    .f { fill: #13896f; }
+    .c { fill: #7c4dcc; }
+    @media (prefers-color-scheme: dark) {
+      .ink { fill: #e6ecf2; }
+      .loop { stroke: #e6ecf2; }
+      .cut { fill: #17202a; }
+      .flap { stroke: #17202a; }
+      .g { fill: #5b95f0; }
+      .f { fill: #3bc29e; }
+      .c { fill: #a884f0; }
+    }
+  </style>
+  <!-- carry loop -->
+  <path class="loop" d="M12 9V6.5a4 4 0 0 1 8 0V9" stroke-width="2.4" stroke-linecap="round" />
+  <!-- body -->
+  <rect class="ink" x="5" y="8" width="22" height="22" rx="5.5" />
+  <!-- flap edge and buckle -->
+  <path class="flap" d="M5.5 14.5Q16 19 26.5 14.5" stroke-width="1.6" />
+  <rect class="cut" x="14" y="15.2" width="4" height="3.6" rx="0.8" />
+  <!-- salary blocks in the front pocket -->
+  <rect class="g" x="8.5" y="21" width="4.6" height="6" rx="1" />
+  <rect class="f" x="13.7" y="21" width="4.6" height="6" rx="1" />
+  <rect class="c" x="18.9" y="21" width="4.6" height="6" rx="1" />
+</svg>
