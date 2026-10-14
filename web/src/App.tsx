@@ -53,11 +53,13 @@ export function App() {
     if (rosterIds.has(id)) return;
     if (replaceId) {
       edit(roster.map((r) => (r === replaceId ? id : r)));
-      setLocked((l) => l.filter((x) => x !== replaceId));
+      setLocked((l) => [...l.filter((x) => x !== replaceId), id]);
     } else if (roster.length >= ROSTER_SIZE) {
       setNotice(`Your roster is full at ${ROSTER_SIZE}. Drop the new player onto someone to swap them, or remove someone first.`);
     } else {
       edit([...roster, id]);
+      // Hand-picked players are kept when re-optimizing.
+      setLocked((l) => [...l, id]);
     }
   };
 
