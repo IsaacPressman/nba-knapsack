@@ -174,7 +174,7 @@ export function App() {
 
       <footer className="footer">
         Salaries and {cap.statsSeason} advanced stats from Basketball-Reference. {cap.season} cap figures from the NBA.
-        Headshots from NBA.com.
+        Headshots from NBA.com. Built by Isaac Pressman.
       </footer>
     </div>
   );
